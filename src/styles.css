@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.page{
+    margin-top: 50px;
+}
+.right{
+    float: right;
+    margin-right: 5px;
+}
+.submit{
+    border-radius: 4px;
+}

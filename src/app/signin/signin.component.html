@@ -1,0 +1,29 @@
+<div class="page">
+  <div class="form container">
+<form (ngSubmit)="onSubmit()" #signinForm="ngForm">
+
+  <div class="container">
+      <label><b>Sign in Splitter!</b></label>
+    <input type="text" placeholder="Your Email" name="email" required  [(ngModel)]="signinForm.email"
+    #email="ngModel">
+    <div [hidden]="email.valid || email.pristine"
+    class="alert alert-danger">
+ Email is invalid
+    </div>
+
+    <input type="password" placeholder=" Password" name="psw" required  [(ngModel)]="signinForm.psw"
+    #psw="ngModel">
+    <div [hidden]="psw.valid || psw.pristine"
+    class="alert alert-danger">
+ Minimum length is 6
+    </div>
+
+    <button type="submit" class="submit" [disabled]="!signinForm.form.valid">Sign In</button>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <a class="right" style="color: green">Sign Up</a>
+  </div>
+</form>
+</div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 
 @Component({
@@ -9,13 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class SigninComponent implements OnInit {
 
   submitted:boolean = false;
+  email: string = '';
+  pws: string = '';
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSubmit() { this.submitted = true; 
-  console.log();
+  onSubmit(form:NgForm) { this.submitted = true; 
+  console.log(form.value);
 }
 
 }

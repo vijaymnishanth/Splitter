@@ -1,22 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule  } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
 import { SigninComponent } from './signin/signin.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { SignupComponent } from './signup/signup.component';
+import { EmailVaildatorDirective } from './email-vaildator.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SigninComponent
+    SigninComponent,
+    SignupComponent,
+    EmailVaildatorDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule ,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

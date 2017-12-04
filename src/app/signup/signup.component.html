@@ -1,0 +1,53 @@
+<div class="page">
+  <div class="form container">
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()" >
+
+  <div class="container">
+      <label><b>Sign Up Splitter!</b></label>
+      <input type="text" placeholder="User Name" id="uname" formControlName="uname" required>
+
+      <div *ngIf="uname.invalid && (uname.dirty || uname.touched)"
+      class="alert alert-danger">
+
+    <div *ngIf="uname.errors.required">
+ User name is required
+    </div> 
+    <div *ngIf="uname.errors.minlength">
+      User name Min length is 8 
+         </div> 
+         <div *ngIf="uname.errors.maxlength">
+          User name Max length is 20
+             </div> 
+    </div>
+
+    <input type="text" placeholder="Your Email" id="email" formControlName="email">
+    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+    class="alert alert-danger">
+    <div *ngIf="email.errors.required"> 
+ Email is Required
+    </div> 
+    <div *ngIf="email.errors.pattern"> 
+      Invalid Email
+         </div>   
+</div>
+    <input type="password" placeholder=" Password" id="pws" formControlName="pws">
+
+    <div *ngIf="pws.invalid && (pws.dirty || pws.touched)"
+    class="alert alert-danger">
+    <div *ngIf="pws.errors.required"> 
+Password is required
+    </div>
+    <div *ngIf="pws.errors.minlength"> 
+     Password  Min length 4
+          </div>
+    </div>
+
+    <button type="submit" class="submit" [disabled]="!signupForm.valid">Sign Up</button>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <a routerLink="/signin" class="right" style="color: green">Sign In</a>
+  </div>
+</form>
+</div>
+</div>

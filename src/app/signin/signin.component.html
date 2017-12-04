@@ -4,12 +4,12 @@
 
   <div class="container">
       <label><b>Sign in Splitter!</b></label>
-    <input type="text" placeholder="Your Email" name="email" required  ngModel
-    #email="ngModel">
-    <div [hidden]="email.valid || email.pristine"
+    <input type="text" placeholder="Your Email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+      ngModel #email="ngModel">
+    <div [hidden]="(email.valid && email.dirty) || email.pristine"
     class="alert alert-danger">
  Email is invalid
-    </div>
+    </div>  
 
     <input type="password" placeholder=" Password" name="psw" required minlength="6" ngModel
     #psw="ngModel">
@@ -22,7 +22,7 @@
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <a class="right" style="color: green">Sign Up</a>
+    <a routerLink="/signup" class="right" style="color: green">Sign Up</a>
   </div>
 </form>
 </div>
